@@ -1,0 +1,64 @@
+@use "../global";
+.todo-wrapper{
+  width: 420px;
+  height: 540px;
+  padding: 30px;
+  margin: 10% auto 0;
+  border-radius: 20px 0 40px 0;
+  background: #252E42;
+  box-shadow: 0 14px 34px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  &__btn{
+    padding: 5px 10px;
+    color: global.$white;
+    background-color: global.$rose-color;
+    @include global.typography($fz:14px, $fw: 500);
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  &__title{
+    margin: 0;
+    color: global.$white;
+    @include global.typography($fz:28px, $fw: 700)
+  }
+  &::before{
+    content:"";
+    position: absolute;
+    width: 395.099px;
+    height: 67.965px;
+    transform: rotate(-2.317deg);
+    border-radius: 20px;
+    background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+    top: -20px;
+    left: 0;
+    z-index: -1;
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    width: 341.859px;
+    height: 85.229px;
+    transform: rotate(-4.485deg);
+    border-radius: 20px;
+    background: linear-gradient(180deg, #4F5565 0%, #000 53.65%);
+    top: -30px;
+    left: 0;
+    z-index: -2;
+  }
+}
+.copyright{
+  width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  color: #414B62;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

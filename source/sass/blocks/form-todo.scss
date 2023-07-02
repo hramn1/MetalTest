@@ -1,0 +1,37 @@
+@use "../global";
+.form-todo{
+  display: flex;
+  flex-wrap: wrap;
+  &__field{
+    padding-left: 35px;
+    color: global.$white;
+    display: flex;
+    flex-wrap: wrap;
+    @include global.typography($lh: normal)
+  }
+  &__input{
+    @include global.visually-hidden
+  }
+  &__label{
+    line-height: 30px;
+    position: relative;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 15px;
+      left: -30px;
+      border-radius: 6px;
+      background: global.$text-color;
+    }
+  }
+  &__subtext{
+    width: 100%;
+    display: inline-block;
+    color: global.$text-color;
+    @include global.typography($fz:12px, $fw: 400, $lh: normal)
+
+  }
+}

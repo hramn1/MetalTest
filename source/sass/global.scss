@@ -1,0 +1,53 @@
+@forward './variables';
+@forward './mixins';
+@use "variables";
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff") ;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff") ;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff") ;
+  font-display: swap;
+}
+body{
+  margin: 0;
+  background-color: variables.$bg-color;
+  font-family: Montserrat, Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../img/background.jpg);
+  @supports (background-image: (url('../img/background.webp'))) {
+    background-image: url('../img/backgroundt.webp')
+  }
+  @media (min-resolution: 2dppx) {
+    background-image: url(../img/background-2x.hpg);
+    @supports (background-image: (url('../img/background-2x.webp'))) {
+      background-image: url('../img/background-2x.webp')
+    }
+  }
+}
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+a {
+  text-decoration: none;
+}
