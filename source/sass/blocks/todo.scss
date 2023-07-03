@@ -21,6 +21,12 @@
     border: 0;
     border-radius: 7px;
     cursor: pointer;
+    transition: background-color ease 300ms;
+    &:hover{
+      background-color: global.$red-color;
+      transition: background-color ease 300ms;
+
+    }
   }
   &__title{
     margin: 0;
