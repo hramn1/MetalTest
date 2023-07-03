@@ -1,48 +1,57 @@
 @use "../global";
-.form-todo{
+
+.form-todo {
   display: flex;
   flex-wrap: wrap;
   max-height: 420px;
   overflow-y: auto;
   margin-top: 20px;
   position: relative;
-  mask-image:  linear-gradient(180deg, #000 70%, transparent);
-  -webkit-mask-image:  linear-gradient(180deg, #000 70%, transparent);
-  &__field{
+  mask-image: linear-gradient(180deg, #000000 70%, transparent);
+
+  &__field {
     padding-left: 35px;
     color: global.$white;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
+
     @include global.typography($lh: normal);
     position: relative;
   }
-  &__input{
+
+  &__input {
     @include global.visually-hidden;
-    &:checked + .form-todo__label{
+
+    &:checked + .form-todo__label {
       color: global.$text-color;
       text-decoration-line: line-through;
       transition: color ease 200ms;
-      & .form-todo__subtext{
+
+      & .form-todo__subtext {
         text-decoration-line: line-through;
       }
-      &::before{
+
+      &::before {
         background-color: global.$rose-color;
-        background-image: url(../img/icons/checkmark.svg);
+        background-image: url("../img/icons/checkmark.svg");
         background-position: 50% 50%;
         background-repeat: no-repeat;
-        transition: color,background-color ease 200ms;
+        transition: color, background-color ease 200ms;
       }
-      &:hover{
+
+      &:hover {
         color: global.$white;
         transition: color ease 200ms;
       }
     }
   }
-  &__label{
+
+  &__label {
     line-height: normal;
     cursor: pointer;
-    &::before{
+
+    &::before {
       content: "";
       display: block;
       position: absolute;
@@ -54,19 +63,22 @@
       background: global.$text-color;
       transition: background-color ease 200ms;
     }
-    &:hover{
+
+    &:hover {
       color: global.$rose-color;
       transition: color ease 200ms;
-      &::before{
-        background: rgba(255, 132, 105, 0.20);
+
+      &::before {
+        background: rgba(255, 132, 105, 0.2);
       }
     }
   }
-  &__subtext{
+
+  &__subtext {
     width: 100%;
     display: inline-block;
     color: global.$text-color;
-    @include global.typography($fz:12px, $fw: 400, $lh: normal)
 
+    @include global.typography($fz:12px, $fw: 400, $lh: normal);
   }
 }
