@@ -1,6 +1,6 @@
 @use "../global";
 .todo-wrapper{
-  width: 420px;
+  max-width: 420px;
   height: 540px;
   padding: 30px;
   margin: 10% auto 0;
@@ -25,7 +25,6 @@
     &:hover{
       background-color: global.$red-color;
       transition: background-color ease 300ms;
-
     }
   }
   &__title{
@@ -36,9 +35,9 @@
   &::before{
     content:"";
     position: absolute;
-    width: 395.099px;
-    height: 67.965px;
-    transform: rotate(-2.317deg);
+    width: 395px;
+    height: 68px;
+    transform: rotate(-2.3deg);
     border-radius: 20px;
     background: linear-gradient(180deg, #31394D 0%, #091739 100%);
     top: -20px;
@@ -48,18 +47,18 @@
   &::after{
     content:"";
     position: absolute;
-    width: 341.859px;
-    height: 85.229px;
-    transform: rotate(-4.485deg);
+    width: 342px;
+    height: 85.5px;
+    transform: rotate(-4.5deg);
     border-radius: 20px;
-    background: linear-gradient(180deg, #4F5565 0%, #000 53.65%);
-    top: -30px;
+    background: linear-gradient(180deg, #4F5565 0%, #000 55%);
+    top: -35px;
     left: 0;
     z-index: -2;
   }
 }
 .copyright{
-  width: 420px;
+  max-width: 420px;
   margin: 0 auto;
   text-align: center;
   color: #414B62;
@@ -67,4 +66,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+@media (max-width: global.$mobile-width) {
+  .todo-wrapper {
+    max-width: 400px;
+    margin-top: 100px;
+    &::before{
+      width: 355px;
+    }
+    &::after{
+      width: 322px;
+    }
+  }
 }
